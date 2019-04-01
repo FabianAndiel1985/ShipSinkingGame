@@ -26,9 +26,15 @@
 	</div> 
 
 	<script type="text/javascript">
+
+		// functions for the choice of the two ways to set up the ship
 		
+
 		function findRandom1 () {
-			alert("Test1");
+		
+			
+
+		
 		}
 		
 		function findRandom2 () {
@@ -41,8 +47,12 @@
 
 			var basicFunctions = [findRandom1,findRandom2];
 
-			basicFunctions[0]();
-
+			var min=0; 
+			var max=1;
+			// create random Index number to launch either the findRandom1 or findRandom2
+			var randomNumber = Math.floor(Math.random()*(max-min+1)+min); 							
+			// launching of findrandom1 or 2
+			basicFunctions[randomNumber]();
 		}
 
 	</script>
