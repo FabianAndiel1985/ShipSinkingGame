@@ -27,32 +27,67 @@
 
 	<script type="text/javascript">
 
+		// 2 sub functions for x incerementation and decrementation
+
+
+
 		// functions for the choice of the two ways to set up the ship
 		
 
-		function findRandom1 () {
-		
-			
+		function setShipUp1 () {
+			// x axis create random number between 3 and 7;
+			// and add 2 to it
+
+			var min1 = 3; 
+			var max1 = 7;
+
+			var randomNumber1 = Math.floor(Math.random()*(max1-min1+1)+min1);
+			alert("X number is " + randomNumber1); 			
+
+			var x1 = randomNumber1;
+			var x2 = x1 + 1;
+			var x3 = x2 + 1;
+
+
+
+			// x axis create random number between 3 and 7;
+			// and subtract 2 to it
+
+			// take random y value and stick with it 
+		}
 
 		
-		}
-		
-		function findRandom2 () {
+		function setShipUp2 () {
 			alert("Test2");
+			// y axis create random number between 3 and 7;
+			// and add 2 to it
+
+			var min2 = 3; 
+			var max2 = 7;
+			// create random Index number to launch either the setShipUp1 or setShipUp2
+			var randomNumber2 = Math.floor(Math.random()*(max2-min2+1)+min2);
+			alert("Y number is " + randomNumber2); 
+
+
+			// y axis create random number between 3 and 7;
+			// and subtract 2 to it
+
+			// take random x value and stick with it 
+
 		}
 
 
 		document.getElementById("launchgame").onclick= function () {
 			// Random choice between the basic functions to set up the Ship
 
-			var basicFunctions = [findRandom1,findRandom2];
+			var basicFunctions = [setShipUp1,setShipUp2];
 
-			var min=0; 
-			var max=1;
-			// create random Index number to launch either the findRandom1 or findRandom2
-			var randomNumber = Math.floor(Math.random()*(max-min+1)+min); 							
-			// launching of findrandom1 or 2
-			basicFunctions[randomNumber]();
+			var min0 =0; 
+			var max0 =1;
+			// create random Index number to launch either the setShipUp1 or setShipUp2
+			var randomNumber0 = Math.floor(Math.random()*(max0-min0+1)+min0); 							
+			// launching of find random1 or 2
+			basicFunctions[randomNumber0]();
 		}
 
 	</script>
