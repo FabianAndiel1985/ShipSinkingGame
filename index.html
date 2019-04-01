@@ -27,10 +27,21 @@
 
 	<script type="text/javascript">
 		
+		function findRandom1 () {
+			alert("Test1");
+		}
+		
+		function findRandom2 () {
+			alert("Test2");
+		}
+
+
 		document.getElementById("launchgame").onclick= function () {
+			// Random choice between the basic functions to set up the Ship
 
+			var basicFunctions = [findRandom1,findRandom2];
 
-
+			basicFunctions[0]();
 
 		}
 
