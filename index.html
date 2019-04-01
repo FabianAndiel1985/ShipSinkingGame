@@ -38,15 +38,30 @@
 			// x axis create random number between 3 and 7;
 			// and add 2 to it
 
-			var min1 = 3; 
+			//FOLGENDES IN EIGENE FUNKTION PACKEN IN SET UP SHIP 1 X INCREMNT
+
+			var min1 = 1; 
 			var max1 = 7;
 
-			var randomNumber1 = Math.floor(Math.random()*(max1-min1+1)+min1);
-			alert("X number is " + randomNumber1); 			
+			var randomNumber1 = Math.floor(Math.random()*(max1-min1+1)+min1);			
 
 			var x1 = randomNumber1;
 			var x2 = x1 + 1;
 			var x3 = x2 + 1;
+			alert("X numbers are " + x1 + x2 + x3); 
+
+
+			//FOLGENDES IN EIGENE FUNKTION PACKEN IN SET UP SHIP 1 X DECREMENTATION
+
+			var min2 = 3; 
+			var max2 = 9;
+
+			var randomNumber2 = Math.floor(Math.random()*(max2-min2+1)+min2);			
+
+			var X1 = randomNumber2;
+			var X2 = X1 - 1;
+			var X3 = X2 - 1;
+			alert("X numbers are " + X1 + X2 + X3);
 
 
 
@@ -56,17 +71,22 @@
 			// take random y value and stick with it 
 		}
 
+
+
 		
 		function setShipUp2 () {
-			alert("Test2");
 			// y axis create random number between 3 and 7;
 			// and add 2 to it
 
-			var min2 = 3; 
+			var min2 = 1; 
 			var max2 = 7;
 			// create random Index number to launch either the setShipUp1 or setShipUp2
 			var randomNumber2 = Math.floor(Math.random()*(max2-min2+1)+min2);
-			alert("Y number is " + randomNumber2); 
+			
+			var y1 = randomNumber2;
+			var y2 = y1 + 1;
+			var y3 = y2 + 1;
+			alert("Y numbers are " + y1 + y2 + y3); 
 
 
 			// y axis create random number between 3 and 7;
