@@ -42,7 +42,16 @@
 		}
 
 		
-		// setting up ship from x-axis
+		// finding a constant y coordinate for setting up the ship starting from x-axis
+
+
+		function findConstYCorr() {
+			var min = 1; 
+			var max = 9;
+			var y = Math.floor(Math.random()*(max-min+1)+min);
+			return y;				
+		}
+
 
 
 		function setShipUp1 () {
@@ -56,6 +65,7 @@
 			var randomNumber = Math.floor(Math.random()*(max-min+1)+min); 							
 			// launching of Ship Setup from X
 			setShipUpFromX[randomNumber]();
+
 			
 			//Following function gives x a starting value and adds 3 to it
 			function setShipUpXIncr () {
@@ -69,7 +79,8 @@
 				var x2 = x1 + 1;
 				var x3 = x2 + 1;
 				var ship = [x1,x2,x3];
-				alert("Your X plus ship is " + ship);
+				var y = findConstYCorr();
+				alert("Your X plus ship is " + ship + " Y is " + y);
 			} 
 
 			
@@ -85,7 +96,8 @@
 			var x2 = x1 - 1;
 			var x3 = x2 - 1;
 			var ship = [x1,x2,x3];
-			alert("Your X minus ship is " + ship);
+			var y = findConstYCorr();
+			alert("Your X minus ship is " + ship + " Y is " + y );
 			}
 
 			// x axis create random number between 3 and 7;
@@ -93,6 +105,7 @@
 
 			// take random y value and stick with it 
 		}
+
 
 
 		// setting up ship from y-axis
