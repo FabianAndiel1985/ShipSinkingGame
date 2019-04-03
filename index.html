@@ -69,7 +69,7 @@
 				var x2 = x1 + 1;
 				var x3 = x2 + 1;
 				var ship = [x1,x2,x3];
-				alert("Your ship is " + ship);
+				alert("Your X plus ship is " + ship);
 			} 
 
 			
@@ -85,7 +85,7 @@
 			var x2 = x1 - 1;
 			var x3 = x2 - 1;
 			var ship = [x1,x2,x3];
-			alert("Your ship is " + ship);
+			alert("Your X minus ship is " + ship);
 			}
 
 			// x axis create random number between 3 and 7;
@@ -95,27 +95,53 @@
 		}
 
 
-
+		// setting up ship from y-axis
 		
 		function setShipUp2 () {
-			// y axis create random number between 3 and 7;
+
+		 	// array to randomly choose from the y incrementation and y decrementation
+
+			var setShipUpFromY = [setShipUpYIncr,setShipUpYDecr];
+			var min = 0; 
+			var max = 1;
+			// create random Index number to launch either the y incrementation and y decrementation
+			var randomNumber = Math.floor(Math.random()*(max-min+1)+min); 							
+			// launching of Ship Setup from Y
+			setShipUpFromY[randomNumber]();
+
+			
+			function setShipUpYIncr () {
+			// y axis create random number between 1 and 7;
 			// and add 2 to it
 
 			var min = 1; 
 			var max = 7;
 			// create random Index number to launch either the setShipUp1 or setShipUp2
-			var randomNumber2 = Math.floor(Math.random()*(max-min+1)+min);
+			var randomNumber = Math.floor(Math.random()*(max-min+1)+min);
 			
-			var y1 = randomNumber2;
+			var y1 = randomNumber;
 			var y2 = y1 + 1;
 			var y3 = y2 + 1;
-			alert("Y numbers are " + y1 + y2 + y3); 
+			var ship = [y1,y2,y3];
+			alert("Your Y plus ship is " + ship);
+			}
 
 
-			// y axis create random number between 3 and 7;
-			// and subtract 2 to it
+			function setShipUpYDecr () {
+			// y axis create random number between 3 and 9;
+			// and subtract 2 from it
 
-			// take random x value and stick with it 
+			var min = 3; 
+			var max = 9;
+
+			var randomNumber = Math.floor(Math.random()*(max-min+1)+min);			
+
+			var y1 = randomNumber;
+			var y2 = y1 - 1;
+			var y3 = y2 - 1;
+			var ship = [y1,y2,y3];
+			alert("Your Y minus ship is " + ship);
+			} 
 
 		}
 
