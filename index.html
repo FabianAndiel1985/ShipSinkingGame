@@ -29,13 +29,13 @@
 
 
 		document.getElementById("launchgame").onclick= function () {
-			// Random choice between the basic functions to set up the Ship starting from x-axis (setShipUp1) or from y-axis (setShipUp2).
+			// Random choice between the basic functions to set up the Ship starting from x-axis (setShipUpX) or from y-axis (setShipUpY).
 
-			var basicFunctions = [setShipUp1,setShipUp2];
+			var basicFunctions = [setShipUpX,setShipUpY];
 
 			var min0 =0; 
 			var max0 =1;
-			// create random Index number to launch either the setShipUp1 or setShipUp2
+			// create random Index number to launch either the setShipUpX or setShipUpY
 			var randomNumber0 = Math.floor(Math.random()*(max0-min0+1)+min0); 							
 			// launching of setShipUp
 			basicFunctions[randomNumber0]();
@@ -54,7 +54,7 @@
 
 
 
-		function setShipUp1 () {
+		function setShipUpX () {
 
 			// array to randomly choose from the x incrementation and x decrementation
 
@@ -107,10 +107,19 @@
 		}
 
 
+	// finding a constant y coordinate for setting up the ship starting from x-axis
+
+		function findConstXCorr() {
+			var min = 1; 
+			var max = 9;
+			var x = Math.floor(Math.random()*(max-min+1)+min);
+			return x;				
+		}
+
 
 		// setting up ship from y-axis
 		
-		function setShipUp2 () {
+		function setShipUpY () {
 
 		 	// array to randomly choose from the y incrementation and y decrementation
 
@@ -129,14 +138,15 @@
 
 			var min = 1; 
 			var max = 7;
-			// create random Index number to launch either the setShipUp1 or setShipUp2
+			// create random Index number to launch either the setShipUpX or setShipUpY
 			var randomNumber = Math.floor(Math.random()*(max-min+1)+min);
 			
 			var y1 = randomNumber;
 			var y2 = y1 + 1;
 			var y3 = y2 + 1;
 			var ship = [y1,y2,y3];
-			alert("Your Y plus ship is " + ship);
+			var x = findConstXCorr();
+			alert("Your Y plus ship is " + ship + " X is " + x);
 			}
 
 
@@ -153,7 +163,8 @@
 			var y2 = y1 - 1;
 			var y3 = y2 - 1;
 			var ship = [y1,y2,y3];
-			alert("Your Y minus ship is " + ship);
+			var x = findConstXCorr();
+			alert("Your Y minus ship is " + ship + " X is " + x);
 			} 
 
 		}
