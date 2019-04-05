@@ -78,8 +78,8 @@
 				var x1 = randomNumber;
 				var x2 = x1 + 1;
 				var x3 = x2 + 1;
-				var ship = [x1,x2,x3];
 				var y = findConstYCorr();
+				var ship = [String(x1)+String(y),String(x2)+String(y),String(x3)+String(y)];
 				alert("Your X plus ship is " + ship + " Y is " + y);
 			} 
 
@@ -95,8 +95,8 @@
 			var x1 = randomNumber2;
 			var x2 = x1 - 1;
 			var x3 = x2 - 1;
-			var ship = [x1,x2,x3];
 			var y = findConstYCorr();
+			var ship = [String(x1)+String(y),String(x2)+String(y),String(x3)+String(y)];
 			alert("Your X minus ship is " + ship + " Y is " + y );
 			}
 
@@ -133,20 +133,20 @@
 
 			
 			function setShipUpYIncr () {
-			// y axis create random number between 1 and 7;
-			// and add 2 to it
+				// y axis create random number between 1 and 7;
+				// and add 2 to it
 
-			var min = 1; 
-			var max = 7;
-			// create random Index number to launch either the setShipUpX or setShipUpY
-			var randomNumber = Math.floor(Math.random()*(max-min+1)+min);
-			
-			var y1 = randomNumber;
-			var y2 = y1 + 1;
-			var y3 = y2 + 1;
-			var ship = [y1,y2,y3];
-			var x = findConstXCorr();
-			alert("Your Y plus ship is " + ship + " X is " + x);
+				var min = 1; 
+				var max = 7;
+				// create random Index number to launch either the setShipUpX or setShipUpY
+				var randomNumber = Math.floor(Math.random()*(max-min+1)+min);
+				
+				var y1 = randomNumber;
+				var y2 = y1 + 1;
+				var y3 = y2 + 1;
+				var x = findConstXCorr();
+				var ship = [String(x)+String(y1),String(x)+String(y2),String(x)+String(y3)];
+				alert("Your Y plus ship is " + ship);
 			}
 
 
@@ -162,9 +162,9 @@
 			var y1 = randomNumber;
 			var y2 = y1 - 1;
 			var y3 = y2 - 1;
-			var ship = [y1,y2,y3];
 			var x = findConstXCorr();
-			alert("Your Y minus ship is " + ship + " X is " + x);
+			var ship = [String(x)+String(y1),String(x)+String(y2),String(x)+String(y3)];
+			alert("Your Y minus ship is " + ship);
 			} 
 
 		}
