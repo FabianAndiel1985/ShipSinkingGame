@@ -19,10 +19,14 @@
 		<br>
 		<br>
 		<br>
-		Enter your coordinates <input type="number" name="">
+		Enter your coordinates <input type="number" name="" id="userEntry">
 		<br>
 		<br>
 		<button id="launchgame"> Fire </button>
+		<br>
+		<br>
+		<button onclick="checkIfHit()"> Check hits </button>
+
 	</div> 
 
 	<script type="text/javascript">
@@ -39,6 +43,8 @@
 			var randomNumber0 = Math.floor(Math.random()*(max0-min0+1)+min0); 							
 			// launching of setShipUp
 			basicFunctions[randomNumber0]();
+			// checkIfHit();
+
 		}
 
 		
@@ -79,7 +85,7 @@
 				var x2 = x1 + 1;
 				var x3 = x2 + 1;
 				var y = findConstYCorr();
-				var ship = [String(x1)+String(y),String(x2)+String(y),String(x3)+String(y)];
+				ship = [String(x1)+String(y),String(x2)+String(y),String(x3)+String(y)];
 				alert("Your X plus ship is " + ship + " Y is " + y);
 			} 
 
@@ -96,7 +102,7 @@
 			var x2 = x1 - 1;
 			var x3 = x2 - 1;
 			var y = findConstYCorr();
-			var ship = [String(x1)+String(y),String(x2)+String(y),String(x3)+String(y)];
+			ship = [String(x1)+String(y),String(x2)+String(y),String(x3)+String(y)];
 			alert("Your X minus ship is " + ship + " Y is " + y );
 			}
 
@@ -145,7 +151,7 @@
 				var y2 = y1 + 1;
 				var y3 = y2 + 1;
 				var x = findConstXCorr();
-				var ship = [String(x)+String(y1),String(x)+String(y2),String(x)+String(y3)];
+				ship = [String(x)+String(y1),String(x)+String(y2),String(x)+String(y3)];
 				alert("Your Y plus ship is " + ship);
 			}
 
@@ -163,11 +169,26 @@
 			var y2 = y1 - 1;
 			var y3 = y2 - 1;
 			var x = findConstXCorr();
-			var ship = [String(x)+String(y1),String(x)+String(y2),String(x)+String(y3)];
+			ship = [String(x)+String(y1),String(x)+String(y2),String(x)+String(y3)];
 			alert("Your Y minus ship is " + ship);
 			} 
 
 		}
+
+		function checkIfHit() {
+			var userEntry = document.getElementById("userEntry").value;
+			var score = 0;
+			while (score < 3) {
+				if (userEntry == ship[0]) {
+					alert("Du hast getroffen");
+					score ++;
+				}
+				
+			}
+			alert("Das kommt nachher " + userEntry);
+
+		}
+
 
 	</script>
 
