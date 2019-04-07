@@ -2,74 +2,37 @@
 <html>
 <head>
 	<title></title>
+
 	<style type="text/css">
-
-		#contentStartScreen, #contentMainScreen {
-			text-align: center;
+		#allContent	{
+			text-align:center;
 		}
 
-		#h1StartScreen {
-			font-family: Arial; 
-			font-weight: bold;
-			font-style: italic;
-		}
 
 	</style>
-	
 </head>
 <body>
-	<div id="contentStartScreen">
-		<h1 id="h1StartScreen"> Ship Sinking Game </h1>
+
+	<div id="allContent">
+		<h1>Ship sinking game</h1>
+		<img src="matchfield.JPG">
 		<br>
 		<br>
 		<br>
+		Enter your coordinates <input type="number" name="" id="userEntry">
 		<br>
-		<button id = "starterButton"> START </button>
-	</div>
+		<br>
+		<button id="launchgame"> Fire </button>
+		<br>
+		<br>
+		<button onclick="checkIfHit()"> Check hits </button>
 
-		<script type="text/javascript">
-		// Transistion from start screen to actual play screen with fire button 			
-			document.getElementById("starterButton").onclick = 
-			function() { 
-				setUpDaShip();
+	</div> 
 
-				document.getElementById("contentStartScreen").innerHTML= "<div id='contentMainScreen'> <h1>Ship sinking game </h1> <img src='matchfield.JPG'><br><br><br> Enter your coordinates <input type='number' id='userEntry'> <br><br> <button id='fireShot'> Fire </button> </div>"; coord1 = 0; coord2 = 0; coord3 = 0;
-				
-				document.getElementById("fireShot").onclick = function() {
-					var userEntry = document.getElementById("userEntry").value;
-					
-					if (userEntry == ship[0]) {
-						while(coord1 < 1) {
-							alert("You scored your first hit");
-							coord1 = 1;
-						}
-					}
-
-					else if(userEntry == ship[1]){
-							while(coord2 < 1) {
-							alert("You scored your second hit");
-							coord2 = 1;
-						}
-					}
-
-					else if (userEntry == ship[2]) {
-							while(coord3 < 1) {
-							alert("You scored your third hit");
-							coord3 = 1;
-						}
-					}
-
-					else {
-						alert("you didn`t score");
-					}	
-
-				}	
-
-				}
+	<script type="text/javascript">
 
 
-
-			function setUpDaShip() {
+		document.getElementById("launchgame").onclick= function () {
 			// Random choice between the basic functions to set up the Ship starting from x-axis (setShipUpX) or from y-axis (setShipUpY).
 
 			var basicFunctions = [setShipUpX,setShipUpY];
@@ -212,14 +175,68 @@
 
 		}
 
+		// WAS SOLL ICH MACHEN
+
+		function checkIfHit() {
+			var userEntry = document.getElementById("userEntry").value;
+			var coord1 = 0;
+			// while (score < 2) {
+				if (userEntry == ship[0]) {
+					while(coord1 < 1) {
+						alert("You scored your first hit");
+						var coord1 = 2;
+					}
+
+					// alert("you got a hit");
+					// ship.shift();
+					// score ++;
+					// alert(ship);
+				}
+
+				else if(userEntry == ship[1]){
 
 
-	
+
+
+
+
+					// alert("you got a first hit");
+					// ship.splice(1,1);
+					// score ++;
+					// alert(ship);
+				}
+
+				else if (userEntry == ship[2]) {
+					
+
+
+
+
+					// alert("you got a second hit");
+					// ship.pop();
+					// score ++;
+					// alert(ship);
+				}
+
+				else {
+					alert("you didn`t score");
+				}	
+
+			}
 				
-		
+			// }
+			// alert(ship);
+			// alert("Das kommt nachher " + userEntry);
 
-		</script>
+		// }
 
-	
+
+	</script>
+
+
+
+
+
+
 </body>
 </html>
