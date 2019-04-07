@@ -175,19 +175,44 @@
 
 		}
 
+		// WAS SOLL ICH MACHEN
+
 		function checkIfHit() {
 			var userEntry = document.getElementById("userEntry").value;
 			var score = 0;
-			while (score < 3) {
+			// while (score < 2) {
 				if (userEntry == ship[0]) {
-					alert("Du hast getroffen");
+					alert("you got a hit");
+					ship.shift();
 					score ++;
+					alert(ship);
 				}
-				
-			}
-			alert("Das kommt nachher " + userEntry);
 
-		}
+				else if(userEntry == ship[1]){
+					alert("you got a first hit");
+					ship.splice(1,1);
+					score ++;
+					alert(ship);
+				}
+
+				else if (userEntry == ship[2]) {
+					alert("you got a second hit");
+					ship.pop();
+					score ++;
+					alert(ship);
+				}
+
+				else {
+					alert("you didn`t score");
+				}	
+
+			}
+				
+			// }
+			// alert(ship);
+			// alert("Das kommt nachher " + userEntry);
+
+		// }
 
 
 	</script>
