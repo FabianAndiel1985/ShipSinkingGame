@@ -33,7 +33,7 @@
 			function() { 
 				setUpDaShip();
 
-				document.getElementById("contentStartScreen").innerHTML= "<div id='contentMainScreen'> <h1>Ship sinking game </h1> <img src='matchfield.JPG'><br><br><br> Enter your coordinates <input  id='userEntry'> <br><br> <button id='fireShot'> Fire </button> </div>"; coord1 = 0; coord2 = 0; coord3 = 0;
+				document.getElementById("contentStartScreen").innerHTML= "<div id='contentMainScreen'> <h1>Ship sinking game </h1> <img src='matchfield.JPG'><br><br><br> Enter your coordinates <input  id='userEntry'> <br><br> <button id='fireShot'> Fire </button> </div>"; coord1 = 0; coord2 = 0; coord3 = 0; score=0;
 				
 				document.getElementById("fireShot").onclick = function() {
 					var userEntry = document.getElementById("userEntry").value;
@@ -41,13 +41,14 @@
 					// check if the users entry is valid
 
 					if (parseInt(userEntry) > 99 || parseInt(userEntry) < 11 || isNaN(parseInt(userEntry)) ) {
-						alert("Gib was gescheids ein");
+						alert("Enter smth useful");
 					}
 					
 					else if (userEntry == ship[0]) {
 						while(coord1 < 1) {
 							alert("You scored your first hit");
 							coord1 = 1;
+							score ++;
 						}
 					}
 
@@ -55,6 +56,7 @@
 							while(coord2 < 1) {
 							alert("You scored your second hit");
 							coord2 = 1;
+							score ++;
 						}
 					}
 
@@ -62,6 +64,7 @@
 							while(coord3 < 1) {
 							alert("You scored your third hit");
 							coord3 = 1;
+							score ++;
 						}
 					}
 
