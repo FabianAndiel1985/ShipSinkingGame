@@ -4,7 +4,7 @@
 	<title></title>
 	<style type="text/css">
 
-		#contentStartScreen, #contentMainScreen {
+		#contentStartScreen, #contentMainScreen, #contentWinnerScreen {
 			text-align: center;
 		}
 
@@ -13,6 +13,8 @@
 			font-weight: bold;
 			font-style: italic;
 		}
+
+
 
 	</style>
 	
@@ -29,8 +31,9 @@
 
 		<script type="text/javascript">
 		// Transistion from start screen to actual play screen with fire button 			
-			document.getElementById("starterButton").onclick = 
-			function() { 
+			document.getElementById("starterButton").onclick = startGame;
+
+			function startGame() { 
 				setUpDaShip();
 
 				document.getElementById("contentStartScreen").innerHTML= "<div id='contentMainScreen'> <h1>Ship sinking game </h1> <img src='matchfield.JPG'><br><br><br> Enter your coordinates <input  id='userEntry'> <br><br> <button id='fireShot'> Fire </button> </div>"; coord1 = 0; coord2 = 0; coord3 = 0; score=0;
@@ -51,6 +54,7 @@
 							score ++;
 							if(score==3) {
 								alert("Test");
+								setUpWinnerScreen();
 							}
 						}
 					}
@@ -63,6 +67,7 @@
 							score ++;
 							if(score==3) {
 								alert("Test");
+								setUpWinnerScreen();
 							}
 						}
 					}
@@ -75,6 +80,7 @@
 							score ++;
 							if(score==3) {
 								alert("Test");
+								setUpWinnerScreen();
 							}
 
 						}
@@ -232,6 +238,32 @@
 			ship = [String(x)+String(y1),String(x)+String(y2),String(x)+String(y3)];
 			alert("Your Y minus ship is " + ship);
 			} 
+
+		}
+
+		// Winning Screen when youre done with the game
+
+		function setUpWinnerScreen() {
+
+			document.getElementById("contentStartScreen").innerHTML="<div id='contentWinnerScreen'><h1> You won and the ship has sunk!!!!</h1> <br> <br> <img src='winnerScreen.jpg' id='winnerScreenPic' alt='celebration pic'> <br> <br> <br> <button id='winnerScreenRepeatButton'> Play once again </button> <br> <br> <button id='winnerScreenExitButton'> Exit </button> </div>";
+
+
+			// playing the game one more time
+
+			document.getElementById("winnerScreenRepeatButton").onclick= repeatGame; 
+
+			function repeatGame() {
+				startGame();
+			}
+					
+			// HELP WE DOESN´T HE CLOSE IT?!?!?
+			// Exiting the game
+
+			document.getElementById("winnerScreenExitButton").onclick = exitGame;
+			
+			function exitGame () {
+				window.close();
+			}
 
 		}
 

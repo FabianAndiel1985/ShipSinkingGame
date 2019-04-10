@@ -2,14 +2,30 @@
 <html>
 <head>
 	<title></title>
-	<style type="text/css">
+	<!-- <style type="text/css">
 		#contentWinnerScreen {
 			text-align:center;
 		}
 
-	</style>
+	</style> -->
 </head>
 <body>
+
+<div id='contentWinnerScreen'><h1> You won and the ship has sunk!!!!</h1> <br> <br> <img src='winnerScreen.jpg' id='winnerScreenPic' alt='celebration pic'> <br> <br> <br> <button id='winnerScreenRepeatButton'> Play once again </button> <br> <br> <button id='winnerScreenExitButton'> Exit </button> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<div id="contentWinnerScreen"
 		<h1> You won and the ship has sunk!!!!</h1>
@@ -26,7 +42,17 @@
 	</div>
 
 	<script type="text/javascript">
-		// document.getElementById("winnerScreenRepeatButton").onclick=   ; 
+
+		// playing the game one more time
+
+		document.getElementById("winnerScreenRepeatButton").onclick= repeatGame; 
+
+		function repeatGame() {
+			startGame();
+		}
+				
+
+		// Exiting the game
 
 		document.getElementById("winnerScreenExitButton").onclick = exitGame;
 		
