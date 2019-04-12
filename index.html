@@ -2,6 +2,17 @@
 <html>
 <head>
 	<title></title>
+
+	<!-- Import google font dokdo -->
+	
+	<link href="https://fonts.googleapis.com/css?family=Dokdo" rel="stylesheet">
+
+	<!-- Import Bootstrap -->
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+		<!-- style of the document -->
+
 	<style type="text/css">
 
 		#contentStartScreen, #contentMainScreen, #contentWinnerScreen {
@@ -9,9 +20,11 @@
 		}
 
 		#h1StartScreen {
-			font-family: Arial; 
+			font-family: 'Dokdo', cursive;
 			font-weight: bold;
 			font-style: italic;
+			font-size:600%;
+			color:#0070C0;
 		}
 
 
@@ -22,11 +35,16 @@
 <body>
 	<div id="contentStartScreen">
 		<h1 id="h1StartScreen"> Ship Sinking Game </h1>
+		<p>	Welcome youre going to play a classical game of battleship!
+			<br/>
+			<br/>
+			The ship will be 3 fields long either horicontally or vertically!	
+			</p>
 		<br>
 		<br>
 		<br>
 		<br>
-		<button id = "starterButton"> START </button>
+		<button type="button" class="btn btn-primary btn-lg" id = "starterButton">Start</button>
 	</div>
 
 		<script type="text/javascript">
